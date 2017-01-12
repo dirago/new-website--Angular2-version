@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
     let headLength: number = document.querySelectorAll('.tete').length - 1;
     let raphaelLetters: Array<Element> = Array.from(document.querySelectorAll('.raphael'));
     let diragoLetters: Array<Element> = Array.from(document.querySelectorAll('.dirago'));
-    let nav: HTMLUListElement = document.querySelector('ul');
     let lis: Array<HTMLLIElement> = Array.from(document.querySelectorAll('li'));
     enum Fade {fadeInLeft, fadeInDown, fadeInRight}
 

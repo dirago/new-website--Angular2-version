@@ -1,6 +1,9 @@
 export class PortfolioItem {
-	id: number;
-	img: string;
 	
-	constructor(){}
+	constructor( private id: number,
+				 public img: string,
+				 public title: string,
+				 public work: string,
+				 public text: string ) {
+	}
 }

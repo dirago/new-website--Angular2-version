@@ -11,6 +11,7 @@ import {routes} from "./app.routing";
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -19,6 +20,7 @@ import { AdminComponent } from './admin/admin.component';
 		AboutComponent,
 		ContactComponent,
 		AdminComponent,
+		NavComponent,
 	],
 	imports: [
 		BrowserModule,

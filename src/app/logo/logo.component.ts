@@ -15,25 +15,25 @@ export class LogoComponent implements OnInit {
 	
 	ngOnInit() {
 		const polygons: Element[] = Array.from(document.querySelectorAll('.tete'));
-		const effects: string[] = ['flash', 'zoomIn', 'flipInX', 'pulse', 'fadeIn' ];
+		const effects: string[] = ['flash'];
 		const svg: Element = document.querySelector('.logo');
-		let counter = 0;
-		polygons.forEach((p, index) => {
+		const lastElement: Element = document.querySelector('#last');
+		let time = 1000;
+		
+		polygons.forEach((path) => {
 			setTimeout(() => {
 				let randomNumber = Math.round(Math.random() * (effects.length - 1));
-				p.classList.remove('tete');
-				p.classList.add('animated');
-				p.classList.add(effects[randomNumber]);
-				counter++;
-				if (index == polygons.length - 1 ) {
-					setTimeout(() => {
-						console.log('Animation done');
-						svg.className = 'logo-min';
-						this.animDone = true;
-						this.onLogoAnimDone.emit(this.animDone);
-					}, 2000)
+				path.classList.remove('tete');
+				path.classList.add('animated');
+				path.classList.add(effects[randomNumber]);
+				if ( path  == lastElement ) {
+					console.log('Animation done');
+					svg.className = 'logo-min';
+					this.animDone = true;
+					this.onLogoAnimDone.emit(this.animDone);
 				}
-			}, 50);
+			}, time);
+			time += 20;
 		})
 	}
 	

@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
 	styleUrls: [ 'app.component.sass' ]
 } )
 export class AppComponent {
+	appIsReady: boolean = false;
 	private title: string = 'Raphaël Di RAGO // Création de sites Internet';
 	
 	public constructor( private titleService: Title, private router: Router ) {
@@ -19,6 +20,6 @@ export class AppComponent {
 	}
 	
 	onLogoAnimDone(done: boolean){
-		done ? this.router.navigateByUrl('/portfolio') : false;
+		done ? this.appIsReady = true : false;
 	}
 }
